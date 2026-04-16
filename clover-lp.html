@@ -1,0 +1,3422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>wellness space CLOVER. | ココロとカラダを整える福岡市南区のウェルネススペース</title>
+<meta name="description" content="福岡市南区・高宮駅のウェルネススペース CLOVER.。ジムでもない、整体でもない。整えて、鍛えて、動きを身につける。健康の先に幸せがある。完全個室・駐車場2台完備。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<!-- 漢字・ひらがな・カタカナ：Zen Kaku Gothic New / 英数のJostはFuturaの代替（Futura優先） -->
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;600&family=Jost:wght@400;600&display=swap" rel="stylesheet">
+<!-- CLOVER.ブランド文字用：Garet（Fontshare） -->
+<link href="https://api.fontshare.com/v2/css?f[]=garet@300,400,500,600,700,800&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  /* 英数字はFutura（先頭）→ 和文はZen Kaku Gothic New で自動振り分け */
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next',
+               'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+  color: #1a1a1a;
+  background: #fff;
+  line-height: 1.8;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ========== VARIABLES ========== */
+:root {
+  --green-deep: #2d5a3d;
+  --green-main: #4a8c5c;
+  --green-light: #7ab68a;
+  --green-pale: #e8f0e6;
+  --green-bg: #f7f9f6;
+  --gold: #b8975a;
+  --gold-light: #d4bc8a;
+  --cream: #fafaf8;
+  --warm-gray: #888;
+  --text-main: #1a1a1a;
+  --text-sub: #555;
+  --white: #ffffff;
+  --section-padding: 120px 0;
+}
+
+/* ========== TYPOGRAPHY ========== */
+.en { font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif; }
+/* CLOVER.ブランドロゴ用フォント（Garet）— 本文内の「CLOVER.」は <span class="brand">CLOVER.</span> で囲む */
+.brand {
+  font-family: 'Garet', 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+}
+.section-label {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  color: var(--text-main);
+}
+.section-lead {
+  font-size: 0.88rem;
+  color: var(--text-sub);
+  line-height: 2.2;
+  max-width: 540px;
+  font-weight: 400;
+}
+
+/* ========== LAYOUT ========== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+section { padding: var(--section-padding); }
+
+/* ========== HEADER / NAV ========== */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+}
+/* スクロールで白背景に切り替わる */
+header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+/* ヒーロー上では白い要素に */
+header:not(.scrolled) .logo-img {
+  filter: brightness(0) invert(1);
+}
+header:not(.scrolled) nav a,
+header:not(.scrolled) .nav-phone {
+  color: #fff;
+}
+/* モバイルでメニューを開いた時は白背景になるので文字色を戻す */
+header:not(.scrolled) nav.open { background: var(--white); }
+header:not(.scrolled) nav.open a { color: var(--text-main); }
+header:not(.scrolled) nav.open .nav-cta {
+  background: var(--green-main);
+  color: var(--white) !important;
+  border: none;
+}
+/* ヒーロー上：背景透過（元のスタイルに戻す） */
+header:not(.scrolled) .nav-cta {
+  background: rgba(255,255,255,0.15);
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+header:not(.scrolled) .nav-cta:hover {
+  background: rgba(255,255,255,0.28);
+}
+header:not(.scrolled) .hamburger span {
+  background: #fff;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 40px;
+}
+.logo-link { display: flex; align-items: center; gap: 10px; }
+.logo-img { height: 64px; width: auto; }
+.logo-text {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+}
+.logo-text span {
+  font-size: 0.6rem;
+  display: block;
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: #000;
+  opacity: 0.5;
+  margin-top: 2px;
+}
+nav { display: flex; gap: 28px; align-items: center; }
+nav a {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: #000;
+  transition: opacity 0.3s;
+  font-weight: 400;
+}
+nav a:hover { opacity: 0.4; }
+/* スクロール時（ヘッダー白背景時）：緑背景・白文字 */
+.nav-cta {
+  background: var(--green-main);
+  color: var(--white) !important;
+  padding: 10px 24px;
+  border-radius: 0;
+  font-size: 0.72rem !important;
+  font-weight: 400;
+  transition: all 0.3s;
+  letter-spacing: 0.12em;
+}
+.nav-cta:hover { background: var(--green-deep); }
+.nav-phone {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--text-main);
+  letter-spacing: 0.06em;
+}
+.hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 24px; height: 1px; background: var(--text-main); transition: 0.3s; }
+
+/* ========== HERO SLIDER ========== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.hero-slider {
+  position: absolute; inset: 0;
+}
+.hero-slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.hero-slide.active { opacity: 1; }
+.hero-slide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.hero-slide::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+.hero-slide-text {
+  position: absolute; inset: 0; z-index: 5;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease 0.3s;
+  pointer-events: none;
+}
+.hero-slide.active .hero-slide-text {
+  opacity: 1;
+}
+.hero-slide-concept {
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.2em;
+  line-height: 1.9;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.hero-slide-concept-en {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: clamp(0.7rem, 1.2vw, 0.82rem);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-top: 20px;
+  font-weight: 400;
+}
+.hero-brand {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 12; text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.hero-brand.visible { opacity: 1; }
+.hero-brand-logo {
+  width: 64px; height: 64px;
+  margin: 0 auto 12px;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+.hero-brand-name {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+.hero-cta-wrap {
+  position: absolute; bottom: 80px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+}
+.hero-cta {
+  display: inline-block;
+  padding: 14px 48px;
+  background: #fff;
+  border: 1px solid #fff;
+  color: #111;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  transition: all 0.4s;
+}
+.hero-cta:hover {
+  background: rgba(255,255,255,0.9);
+  border-color: #fff;
+  color: #000;
+}
+/* Slide indicators */
+.hero-indicators {
+  position: absolute; bottom: 40px; left: 50%;
+  transform: translateX(-50%); z-index: 20;
+  display: flex; gap: 12px;
+}
+.hero-indicator {
+  width: 40px; height: 2px;
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.hero-indicator.active::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: #fff;
+  animation: indicatorFill 5s linear forwards;
+}
+@keyframes indicatorFill {
+  from { transform: scaleX(0); transform-origin: left; }
+  to { transform: scaleX(1); transform-origin: left; }
+}
+/* hero-cta and hero-scroll are now defined in the HERO SLIDER section above */
+
+/* ========== CONCEPT ========== */
+.concept { background: var(--cream); text-align: center; padding: 140px 0; }
+.concept-inner { max-width: 640px; margin: 0 auto; }
+.concept-catch {
+  font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  line-height: 2.4;
+  color: var(--text-main);
+  margin-bottom: 48px;
+}
+.concept-catch em {
+  font-style: normal;
+  color: var(--text-main);
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+}
+.concept-text {
+  font-size: 0.88rem;
+  color: var(--text-sub);
+  line-height: 2.4;
+  text-align: center;
+  font-weight: 400;
+}
+.concept-divider {
+  width: 48px; height: 1px;
+  background: #ccc;
+  margin: 48px auto;
+}
+
+/* ========== BENEFITS ========== */
+.benefits { background: var(--white); }
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  margin-top: 56px;
+}
+.benefit-card {
+  background: var(--white);
+  padding: 0 0 28px;
+  text-align: center;
+  border: 1px solid #ece8e0;
+  transition: border-color 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.benefit-card:hover {
+  border-color: var(--green-main);
+  transform: translateY(-2px);
+}
+.benefit-image {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.benefit-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.benefit-card:hover .benefit-image img {
+  transform: scale(1.05);
+}
+.benefit-body {
+  padding: 0 20px;
+  width: 100%;
+}
+.benefit-num {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--green-main);
+  letter-spacing: 0.2em;
+  margin-bottom: 10px;
+}
+.benefit-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.benefit-text {
+  font-size: 0.78rem;
+  color: var(--text-sub);
+  line-height: 1.85;
+  font-weight: 400;
+}
+
+/* ========== FEATURES ========== */
+.features { background: var(--white); }
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 64px;
+  background: #e5e5e5;
+}
+.feature-card {
+  background: var(--white);
+  padding: 48px 36px;
+  text-align: center;
+  transition: background 0.3s;
+  border: none;
+  border-radius: 0;
+}
+.feature-card:hover {
+  background: var(--cream);
+  transform: none;
+  box-shadow: none;
+}
+.feature-num {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #ddd;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+.feature-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-main);
+  letter-spacing: 0.08em;
+}
+.feature-text {
+  font-size: 0.82rem;
+  color: var(--text-sub);
+  line-height: 2;
+  font-weight: 400;
+}
+
+/* ========== METHOD ========== */
+.method { background: var(--cream); }
+.method-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 64px;
+}
+.method-card {
+  padding: 48px 40px;
+  border-radius: 0;
+  background: var(--white);
+  border: 1px solid #e5e5e5;
+}
+.method-num {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--warm-gray);
+  margin-bottom: 12px;
+}
+.method-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  letter-spacing: 0.06em;
+}
+.method-text {
+  font-size: 0.82rem;
+  color: var(--text-sub);
+  line-height: 2.2;
+  font-weight: 400;
+}
+
+/* ========== MENU & PRICING ========== */
+.menu { background: var(--white); }
+.menu-intro { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+.pricing-system {
+  background: var(--cream);
+  border-radius: 0;
+  padding: 48px;
+  margin-bottom: 40px;
+  border: 1px solid #e5e5e5;
+}
+.pricing-system-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.pricing-system-sub {
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  text-align: center;
+  margin-bottom: 32px;
+}
+.pricing-formula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.formula-box {
+  padding: 12px 20px;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.04em;
+  min-width: 200px;
+  min-height: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.formula-result {
+  background: var(--green-deep);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.formula-member,
+.formula-session {
+  min-width: 155px;
+  min-height: 52px;
+  font-size: 0.72rem;
+  padding: 8px 14px;
+}
+.formula-member small,
+.formula-session small {
+  font-size: 0.62rem;
+  margin-top: 2px;
+}
+.formula-member { background: var(--green-pale); color: var(--green-deep); }
+.formula-session { background: var(--gold-light); color: #5a4520; }
+.formula-op { font-size: 1.2rem; color: var(--warm-gray); font-weight: 400; }
+.entry-fee {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 14px;
+  margin: 48px auto 24px;
+  padding: 16px 32px;
+  background: var(--green-pale);
+  border: 1px solid var(--green-main);
+  border-radius: 0;
+  max-width: 420px;
+}
+.entry-fee-label {
+  font-size: 0.9rem;
+  color: var(--green-deep);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+.entry-fee-price { font-size: 1.2rem; font-weight: 600; color: var(--green-deep); }
+
+/* Pricing tables */
+.member-fee-group {
+  margin-top: 40px;
+  border: 1px solid var(--green-main);
+  border-radius: 0;
+  padding: 28px;
+  background: #fdfcf9;
+  position: relative;
+}
+.member-fee-heading {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.member-fee-heading-label {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-main);
+  margin-bottom: 6px;
+}
+.member-fee-heading-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  letter-spacing: 0.12em;
+  margin-bottom: 6px;
+}
+.member-fee-heading-sub {
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+}
+.pricing-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.pricing-table {
+  background: var(--white);
+  border-radius: 0;
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+}
+.pricing-table-header {
+  padding: 20px 24px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+.pricing-table.standard .pricing-table-header {
+  background: var(--green-pale);
+  color: var(--green-deep);
+}
+.pricing-table.premium .pricing-table-header {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  color: var(--white);
+}
+.pricing-table-body { padding: 24px; }
+.pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  font-size: 0.9rem;
+}
+.pricing-row:last-child { border-bottom: none; }
+.pricing-row .freq { color: var(--text-sub); }
+.pricing-row .price { font-weight: 600; color: var(--green-deep); font-size: 1.05rem; }
+.pricing-table-fee {
+  text-align: center;
+  padding: 0 24px 20px;
+  font-size: 0.8rem;
+  color: var(--warm-gray);
+}
+.pricing-table-features {
+  list-style: none;
+  padding: 0 24px 24px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px dashed rgba(0,0,0,0.08);
+  padding-top: 16px;
+}
+.pricing-table-features li {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.5;
+  padding-left: 22px;
+  position: relative;
+}
+.pricing-table-features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 12px;
+  height: 6px;
+  border-left: 2px solid var(--green-main);
+  border-bottom: 2px solid var(--green-main);
+  transform: rotate(-45deg);
+}
+.pricing-table.premium .pricing-table-features li::before {
+  border-color: var(--gold);
+}
+.pricing-table-member-fee {
+  text-align: center;
+  padding: 16px 24px 0;
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+.pricing-table-member-fee strong {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  margin-left: 4px;
+}
+.pricing-table.premium .pricing-table-member-fee strong {
+  color: var(--gold-deep, #b8955a);
+}
+.formula-member small,
+.formula-session small {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 400;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+/* Staff rank */
+.staff-rank {
+  margin-top: 40px;
+  background: var(--cream);
+  border-radius: 0;
+  padding: 32px;
+  border: 1px solid #e5e5e5;
+}
+.staff-rank h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+.rank-list { display: flex; flex-direction: column; gap: 12px; }
+.rank-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--white);
+  border-radius: 0;
+  font-size: 0.88rem;
+  border: 1px solid #e5e5e5;
+}
+.rank-item.highlight {
+  border: 1px solid var(--text-main);
+  background: var(--white);
+}
+.rank-name { font-weight: 600; color: var(--text-main); }
+.rank-person { color: var(--green-deep); font-size: 0.88rem; font-weight: 600; }
+.rank-price { font-weight: 600; color: var(--green-deep); font-size: 1rem; }
+.tax-label {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--warm-gray);
+  opacity: 0.7;
+  margin-left: 4px;
+  letter-spacing: 0;
+}
+.pricing-note {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--warm-gray);
+  line-height: 1.9;
+}
+
+/* Stage discount */
+.stage-section {
+  margin-top: 40px;
+  background: var(--cream);
+  border-radius: 0;
+  padding: 32px;
+  border: 1px solid #e5e5e5;
+}
+.stage-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  margin-bottom: 8px;
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+.stage-section > p {
+  font-size: 0.82rem;
+  color: var(--warm-gray);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.stage-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.stage-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 18px;
+  min-width: 120px;
+  border-radius: 0;
+  font-size: 0.75rem;
+  font-weight: 400;
+  background: var(--white);
+  color: var(--text-sub);
+  border: 1px solid #e5e5e5;
+  letter-spacing: 0.04em;
+}
+.stage-badge .stage-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 0.08em;
+}
+.stage-badge .stage-year {
+  font-size: 0.68rem;
+  color: var(--warm-gray);
+  letter-spacing: 0.06em;
+}
+.stage-badge strong {
+  font-size: 0.78rem;
+  color: var(--green-deep);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ========== VOICE ========== */
+.voice { background: var(--cream); }
+.voice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: 64px;
+  background: #e5e5e5;
+}
+.voice-card {
+  padding: 40px;
+  background: var(--white);
+  border-radius: 0;
+  border: none;
+}
+.voice-meta {
+  font-size: 0.72rem;
+  color: var(--warm-gray);
+  font-weight: 400;
+  margin-bottom: 8px;
+  letter-spacing: 0.12em;
+}
+.voice-purpose {
+  font-size: 0.82rem;
+  color: var(--warm-gray);
+  margin-bottom: 12px;
+}
+.voice-text {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  line-height: 2;
+  position: relative;
+  padding-left: 16px;
+  border-left: 1px solid #ccc;
+  font-weight: 400;
+}
+
+/* ========== STAFF ========== */
+.staff { background: var(--white); }
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  margin-top: 64px;
+}
+.staff-card {
+  background: var(--white);
+  border-radius: 0;
+  overflow: hidden;
+  transition: none;
+}
+.staff-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+.staff-photo {
+  width: 100%;
+  height: 400px;
+  background: #f0f0ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--warm-gray);
+  font-size: 0.82rem;
+}
+.staff-info { padding: 32px 0; }
+.staff-role {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--warm-gray);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.staff-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-main);
+  letter-spacing: 0.06em;
+}
+.staff-name-en {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  margin-bottom: 16px;
+}
+.staff-bio {
+  font-size: 0.82rem;
+  color: var(--text-sub);
+  line-height: 1.9;
+}
+.staff-bio dt {
+  font-weight: 600;
+  color: var(--green-deep);
+  font-size: 0.78rem;
+  margin-top: 12px;
+  margin-bottom: 2px;
+}
+.staff-bio dd { margin-left: 0; }
+.staff-message {
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--cream);
+  border-radius: 0;
+  font-size: 0.82rem;
+  color: var(--text-sub);
+  line-height: 2;
+  font-weight: 400;
+  border-left: 1px solid #ccc;
+}
+
+/* ========== PROFILE (OWNER STORY) ========== */
+.profile { background: var(--cream); padding: 140px 0; }
+.profile-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 64px;
+}
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 0;
+  background: #f0f0ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--warm-gray);
+  font-size: 0.82rem;
+}
+.profile-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: 0.08em;
+}
+.profile-name-en {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 1rem;
+  color: var(--warm-gray);
+  margin-bottom: 24px;
+}
+.profile-text {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  line-height: 2.2;
+}
+.profile-text p + p { margin-top: 16px; }
+
+/* ========== SALONIA-STYLE VERTICAL LABELS (Topics / FAQ) ========== */
+/* 共通：縦書きの英字ラベル（下線なし） */
+.v-label {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.28em;
+  color: var(--text-main);
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Topics: 縦文字ラベル左（段違い：ラベルを上に持ち上げる） */
+.news-salonia {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 28px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.news-salonia .v-label-col {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 0;
+  transform: translateY(-28px); /* リストより上に段違いで配置 */
+}
+
+/* FAQ: 縦文字ラベル右（段違い：ラベルを上に持ち上げる） */
+.faq-salonia {
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  gap: 28px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.faq-salonia .v-label-col {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 0;
+  transform: translateY(-28px);
+}
+@media (max-width: 768px) {
+  .news-salonia, .faq-salonia { grid-template-columns: 1fr; gap: 16px; }
+  .news-salonia .v-label-col, .faq-salonia .v-label-col { display: none; }
+}
+
+/* Topics / FAQ: 折りたたみ。ボタンで展開 */
+.news-list .news-item.is-hidden { display: none; }
+.news-list.expanded .news-item.is-hidden { display: flex; }
+.faq-list .faq-item.is-hidden { display: none; }
+.faq-list.expanded .faq-item.is-hidden { display: block; }
+.news-toggle-wrap,
+.faq-toggle-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+.faq-toggle-wrap {
+  justify-content: flex-start;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.news-toggle,
+.faq-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  color: var(--text-main);
+  padding: 10px 0 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 1px solid var(--text-main);
+  transition: opacity 0.3s, letter-spacing 0.3s;
+}
+.news-toggle:hover,
+.faq-toggle:hover { opacity: 0.6; }
+.news-toggle .chev,
+.faq-toggle .chev {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+/* ========== FAQ ========== */
+.faq { background: var(--white); }
+.faq-list {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.faq-item {
+  background: var(--white);
+  border-radius: 0;
+  overflow: hidden;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+}
+.faq-q {
+  padding: 24px 0;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: color 0.2s;
+}
+.faq-q:hover { background: none; color: var(--warm-gray); }
+.faq-q::before {
+  content: 'Q';
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--warm-gray);
+  min-width: 24px;
+}
+.faq-q::after {
+  content: '+';
+  margin-left: auto;
+  font-size: 1.2rem;
+  color: var(--warm-gray);
+  transition: transform 0.3s;
+  min-width: 20px;
+  text-align: center;
+}
+.faq-item.open .faq-q::after { content: '-'; }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+.faq-item.open .faq-a {
+  max-height: 500px;
+  padding: 0 24px 20px 60px;
+}
+.faq-a-inner {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  line-height: 1.9;
+}
+
+/* ========== ACCESS ========== */
+.access { background: var(--cream); }
+.access-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 56px;
+}
+.access-map {
+  border-radius: 0;
+  overflow: hidden;
+  height: 420px;
+  background: #e8e8e5;
+}
+.access-map iframe { width: 100%; height: 100%; border: none; }
+.access-info-list { display: flex; flex-direction: column; gap: 24px; }
+.access-item-label {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green-main);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.access-item-value {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.8;
+}
+.parking-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--cream);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 0;
+  font-size: 0.82rem;
+  font-weight: 400;
+  margin-top: 8px;
+  border: 1px solid #e5e5e5;
+}
+
+/* ========== CTA ========== */
+.cta-section {
+  background: var(--text-main);
+  text-align: center;
+  padding: 100px 0;
+}
+.cta-title {
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+  line-height: 2;
+}
+.cta-sub {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 48px;
+  letter-spacing: 0.12em;
+  font-weight: 400;
+}
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--text-main);
+  padding: 18px 48px;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  transition: all 0.3s;
+  box-shadow: none;
+}
+.cta-button:hover {
+  transform: none;
+  background: #f0f0f0;
+  box-shadow: none;
+}
+.cta-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--white);
+  padding: 18px 36px;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  border: 1px solid rgba(255,255,255,0.25);
+  transition: all 0.3s;
+}
+.cta-phone:hover {
+  border-color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.05);
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: #1a1a1a;
+  color: rgba(255,255,255,0.5);
+  padding: 48px 0 32px;
+  text-align: center;
+}
+.footer-logo-img { height: 48px; margin: 0 auto 12px; filter: brightness(0) invert(1); opacity: 0.7; }
+.footer-name {
+  font-family: 'Garet', 'Futura', 'Jost', 'Century Gothic', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.footer-sub {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 16px;
+}
+.footer-address {
+  font-size: 0.8rem;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+.footer-phone {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 24px;
+}
+.footer-hours {
+  font-size: 0.78rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+.footer-copy { font-size: 0.7rem; letter-spacing: 0.1em; }
+.footer-company {
+  font-size: 0.72rem;
+  margin-top: 4px;
+  color: rgba(255,255,255,0.3);
+}
+.footer-company-en {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-style: italic;
+  letter-spacing: 0.15em;
+  margin-right: 10px;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  :root { --section-padding: 96px 0; }
+  .container { padding: 0 28px; }
+  nav { display: none; }
+  nav.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--white);
+    padding: 80px 40px 60px;
+    gap: 32px;
+    border-bottom: none;
+    box-shadow: none;
+    z-index: 90;
+    overflow-y: auto;
+    animation: menuFade 0.35s ease;
+  }
+  nav.open a {
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
+    color: var(--text-main);
+  }
+  nav.open .nav-phone {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    margin-top: 12px;
+  }
+  nav.open .nav-cta {
+    margin-top: 8px;
+    padding: 14px 40px;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.2em;
+  }
+  @keyframes menuFade {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hamburger { display: flex; position: relative; z-index: 110; }
+  /* open時はハンバーガーを×印に変形 */
+  .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  /* メニュー開時はハンバーガー線を黒に */
+  header:not(.scrolled) .hamburger.active span { background: var(--text-main); }
+  /* メニュー開時は背景スクロール防止 */
+  body.menu-open { overflow: hidden; }
+
+  /* --- HERO: SALONIA-like mobile refinement --- */
+  .hero { height: 90vh; }
+  .hero-slide::after { background: rgba(0,0,0,0.32); }
+  .hero-slide-concept {
+    font-size: 1.1rem;
+    letter-spacing: 0.32em;
+    line-height: 2.4;
+    font-weight: 400;
+    padding: 0 28px;
+  }
+  .hero-slide-concept-en {
+    font-size: 0.62rem;
+    letter-spacing: 0.5em;
+    margin-top: 28px;
+    color: rgba(255,255,255,0.55);
+  }
+  .hero-brand-logo { width: 48px; height: 48px; }
+  .hero-brand-name { font-size: 0.58rem; letter-spacing: 0.6em; }
+  .hero-cta {
+    padding: 12px 32px;
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    border-color: rgba(255,255,255,0.55);
+  }
+  .hero-cta-wrap { bottom: 60px; }
+  .hero-indicators { bottom: 24px; gap: 10px; }
+  .hero-indicator { width: 28px; }
+
+  /* --- Section labels: SALONIA-like large hairline English --- */
+  .section-label {
+    font-size: 1rem;
+    letter-spacing: 0.35em;
+    margin-bottom: 10px;
+    color: var(--green-deep);
+    font-weight: 400;
+  }
+  .section-title {
+    font-size: 0.92rem;
+    letter-spacing: 0.18em;
+    font-weight: 400;
+    line-height: 2;
+    margin-bottom: 20px;
+  }
+
+  /* --- CONCEPT --- */
+  .concept { padding: 112px 0; }
+  .concept-catch {
+    font-size: 1.02rem;
+    letter-spacing: 0.22em;
+    line-height: 2.6;
+    font-weight: 400;
+  }
+  .concept-text { font-size: 0.82rem; line-height: 2.4; }
+  .concept-divider { margin: 40px auto; width: 32px; }
+
+  /* --- BENEFITS (mobile, editorial varied layouts per card) --- */
+  .benefits-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    margin-top: 48px;
+  }
+  .benefit-card {
+    flex: 1 1 100%;
+    max-width: none;
+    padding: 0;
+    border: none;
+    background: transparent;
+    overflow: visible;
+  }
+  .benefit-card:hover { border: none; transform: none; }
+  .benefit-image { margin-bottom: 0; }
+  .benefit-body { padding: 20px 4px 0; text-align: left; }
+  .benefit-num { font-size: 0.7rem; letter-spacing: 0.32em; margin-bottom: 8px; color: var(--green-main); }
+  .benefit-title { font-size: 0.92rem; letter-spacing: 0.12em; margin-bottom: 10px; font-weight: 600; }
+  .benefit-text { font-size: 0.78rem; line-height: 2; font-weight: 400; }
+
+  /* 01 完全個室 — hero full-bleed, centered text */
+  .benefit-card:nth-child(1) .benefit-image {
+    height: 320px;
+    margin: 0 -28px;
+  }
+  .benefit-card:nth-child(1) .benefit-body {
+    text-align: center;
+    padding: 28px 8px 0;
+  }
+
+  /* 02 駐車場 — horizontal: image left 42%, text right */
+  .benefit-card:nth-child(2) {
+    display: grid;
+    grid-template-columns: 44% 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+  .benefit-card:nth-child(2) .benefit-image {
+    height: 170px;
+    margin-bottom: 0;
+  }
+  .benefit-card:nth-child(2) .benefit-body { padding: 0; }
+
+  /* 03 専属担当制 — image right-offset, text flowing right */
+  .benefit-card:nth-child(3) .benefit-image {
+    height: 240px;
+    width: 82%;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .benefit-card:nth-child(3) .benefit-body {
+    padding: 20px 0 0 18%;
+  }
+
+  /* 04 セルフ利用無料 — horizontal reverse: text left, image right */
+  .benefit-card:nth-child(4) {
+    display: grid;
+    grid-template-columns: 1fr 44%;
+    gap: 20px;
+    align-items: center;
+  }
+  .benefit-card:nth-child(4) .benefit-image {
+    height: 170px;
+    margin-bottom: 0;
+    order: 2;
+  }
+  .benefit-card:nth-child(4) .benefit-body {
+    padding: 0;
+    text-align: right;
+    order: 1;
+  }
+
+  /* 05 かんたん予約 — image left-offset, text right-aligned */
+  .benefit-card:nth-child(5) .benefit-image {
+    height: 240px;
+    width: 82%;
+    margin-right: auto;
+    margin-left: 0;
+  }
+  .benefit-card:nth-child(5) .benefit-body {
+    padding: 20px 18% 0 0;
+    text-align: right;
+  }
+
+  /* --- NEWS (mobile, SALONIA minimal) --- */
+  .news { padding: 80px 0; }
+  .news-item { flex-wrap: wrap; gap: 4px 16px; padding: 18px 0; }
+  .news-header { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 32px; }
+  .news-date { font-size: 0.72rem; min-width: auto; letter-spacing: 0.15em; }
+  .news-tag { display: none; }
+  .news-title-text { font-size: 0.82rem; width: 100%; line-height: 1.75; }
+
+  /* --- FEATURES (mobile, editorial triptych) --- */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+    background: transparent;
+    margin-top: 48px;
+  }
+  .feature-card {
+    padding: 0;
+    text-align: left;
+  }
+  .feature-card:hover { background: transparent; }
+  .feature-num {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .feature-title { font-size: 1rem; margin-bottom: 14px; }
+  .feature-text { font-size: 0.82rem; line-height: 2; }
+
+  /* 01 Conditioning — full-bleed hero image + centered text */
+  .feature-card:nth-child(1) { text-align: center; }
+  .feature-card:nth-child(1) > div:first-child {
+    height: 300px !important;
+    margin: 0 -28px 28px !important;
+  }
+
+  /* 02 Training — image right-offset, text left-aligned */
+  .feature-card:nth-child(2) { text-align: left; }
+  .feature-card:nth-child(2) > div:first-child {
+    height: 240px !important;
+    width: 84% !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    margin-bottom: 24px !important;
+  }
+  .feature-card:nth-child(2) .feature-num { text-align: left; }
+
+  /* 03 Movement — image left-offset, text right-aligned */
+  .feature-card:nth-child(3) { text-align: right; }
+  .feature-card:nth-child(3) > div:first-child {
+    height: 240px !important;
+    width: 84% !important;
+    margin-right: auto !important;
+    margin-left: 0 !important;
+    margin-bottom: 24px !important;
+  }
+  .feature-card:nth-child(3) .feature-num { text-align: right; }
+
+  .method-grid { grid-template-columns: 1fr; }
+  .pricing-tables { grid-template-columns: 1fr; }
+  .member-fee-group { padding: 20px 16px; }
+  .member-fee-heading-title { font-size: 1.15rem; }
+  .pricing-formula { flex-direction: column; }
+  .voice-grid { grid-template-columns: 1fr; }
+  .staff-grid { grid-template-columns: 1fr; gap: 24px; }
+  .profile-inner { grid-template-columns: 1fr; gap: 32px; }
+  .access-inner { grid-template-columns: 1fr; gap: 32px; }
+  .access-map { height: 280px; }
+  .pricing-system { padding: 32px 20px; }
+  .staff-rank { padding: 24px 16px; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+}
+@media (max-width: 480px) {
+  .benefits-grid { gap: 48px; }
+  /* narrow-mobile size adjustments for the varied layouts */
+  .benefit-card:nth-child(1) .benefit-image { height: 280px; }
+  .benefit-card:nth-child(2) .benefit-image,
+  .benefit-card:nth-child(4) .benefit-image { height: 150px; }
+  .benefit-card:nth-child(3) .benefit-image,
+  .benefit-card:nth-child(5) .benefit-image { height: 220px; width: 86%; }
+  .benefit-card:nth-child(3) .benefit-body { padding-left: 14%; }
+  .benefit-card:nth-child(5) .benefit-body { padding-right: 14%; }
+  .feature-card:nth-child(1) > div:first-child { height: 260px !important; }
+  .feature-card:nth-child(2) > div:first-child,
+  .feature-card:nth-child(3) > div:first-child { height: 220px !important; width: 86% !important; }
+  .benefit-title { font-size: 0.9rem; }
+  .benefit-text { font-size: 0.76rem; }
+  .hero-slide-concept { font-size: 1rem; letter-spacing: 0.28em; }
+}
+
+/* ========== SIMULATOR ========== */
+.simulator { background: var(--cream); }
+.sim-container {
+  max-width: 680px;
+  margin: 64px auto 0;
+  background: var(--white);
+  border-radius: 0;
+  padding: 48px 40px;
+  border: 1px solid #e5e5e5;
+  position: relative;
+}
+.sim-progress {
+  height: 4px;
+  background: var(--green-pale);
+  border-radius: 2px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.sim-progress-bar {
+  height: 100%;
+  background: var(--green-main);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+.sim-steps {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 36px;
+}
+.sim-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--warm-gray);
+  letter-spacing: 0.06em;
+  transition: color 0.3s;
+  min-width: 44px;
+  text-align: center;
+}
+.sim-step > span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: #f0f0f0;
+  color: var(--warm-gray);
+  transition: all 0.3s;
+  line-height: 1;
+}
+.sim-step.active { color: var(--text-main); font-weight: 600; }
+.sim-step.active > span {
+  background: var(--text-main);
+  color: var(--white);
+}
+.sim-step.done { color: var(--warm-gray); }
+.sim-step.done > span {
+  background: var(--green-main);
+  color: var(--white);
+}
+.sim-question {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--text-main);
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 0.08em;
+}
+.sim-hint {
+  font-size: 0.82rem;
+  color: var(--warm-gray);
+  text-align: center;
+  margin-bottom: 28px;
+}
+.sim-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sim-options-row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.sim-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--cream);
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.25s;
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+.sim-option:hover {
+  border-color: var(--text-main);
+  background: var(--white);
+  transform: none;
+  box-shadow: none;
+}
+.sim-option-icon { width: 36px; min-width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; color: var(--green-main); }
+.sim-option-icon svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.sim-option-title { font-size: 0.95rem; font-weight: 600; color: var(--text-main); display: block; }
+.sim-option-desc { font-size: 0.78rem; color: var(--warm-gray); display: block; margin-top: 2px; }
+.sim-option-small {
+  flex: 1;
+  min-width: 120px;
+  max-width: 150px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  padding: 20px 16px;
+}
+.sim-option-small .sim-option-title { font-size: 1.1rem; }
+.sim-panel {
+  animation: simFadeIn 0.4s ease;
+}
+@keyframes simFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Result */
+.sim-result-header { text-align: center; margin-bottom: 28px; }
+.sim-result-label {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-main);
+  margin-bottom: 8px;
+}
+.sim-result-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.sim-result-plan, .sim-result-staff {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  border: 1px solid rgba(74,140,92,0.08);
+}
+.sim-result-plan-badge {
+  display: inline-block;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  background: var(--green-pale);
+  color: var(--green-deep);
+}
+.sim-result-plan-badge.premium {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--white);
+}
+.sim-result-plan-reason { font-size: 0.82rem; color: var(--text-sub); line-height: 1.6; }
+.sim-result-staff-icon { font-size: 2rem; margin-bottom: 8px; }
+.sim-result-staff-role { font-size: 0.78rem; color: var(--green-main); font-weight: 600; letter-spacing: 0.04em; }
+.sim-result-staff-name { font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin: 4px 0 8px; }
+.sim-result-staff-reason { font-size: 0.78rem; color: var(--warm-gray); line-height: 1.5; }
+
+.sim-result-price-box {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 24px;
+  border: 2px solid var(--green-main);
+  margin-bottom: 24px;
+}
+.sim-bd-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 0.88rem;
+  color: var(--text-sub);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.sim-bd-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--green-deep);
+}
+.sim-result-actions { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.sim-result-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-main);
+  color: var(--white);
+  padding: 16px 40px;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: all 0.3s;
+  box-shadow: 0 4px 16px rgba(74,140,92,0.2);
+}
+.sim-result-cta:hover { background: var(--green-deep); transform: translateY(-2px); }
+.sim-result-retry {
+  background: none;
+  border: none;
+  color: var(--warm-gray);
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sim-result-retry:hover { color: var(--text-main); }
+.sim-back-wrap { text-align: center; margin-top: 20px; }
+.sim-back {
+  background: none;
+  border: none;
+  color: var(--warm-gray);
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+.sim-back:hover { color: var(--green-main); }
+
+@media (max-width: 768px) {
+  .sim-container { padding: 32px 20px; }
+  .sim-result-cards { grid-template-columns: 1fr; }
+  .sim-option-small { min-width: 70px; max-width: 100%; }
+}
+
+/* ========== NEWS / TOPICS ========== */
+.news { background: var(--white); padding: 80px 0; }
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+}
+.news-header-left {}
+.news-more {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  color: var(--warm-gray);
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+  transition: color 0.3s;
+}
+.news-more:hover { color: var(--text-main); }
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.news-item {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e5e5;
+  transition: background 0.2s;
+}
+.news-item:first-child { border-top: 1px solid #e5e5e5; }
+.news-item:hover { background: var(--cream); }
+.news-date {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.82rem;
+  color: var(--warm-gray);
+  letter-spacing: 0.08em;
+  min-width: 100px;
+  font-weight: 400;
+}
+.news-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--text-sub);
+  border: 1px solid #ddd;
+  padding: 3px 12px;
+  min-width: 80px;
+  text-align: center;
+  font-weight: 400;
+}
+.news-title-text {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+@media (max-width: 768px) {
+  .news-item {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .news-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+/* ========== NEWS MODAL ========== */
+.news-body { display: none; } /* リスト表示では隠す */
+.news-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+.news-modal.open { display: flex; animation: modalFade 0.3s ease; }
+.news-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+.news-modal-content {
+  position: relative;
+  background: var(--white);
+  max-width: 640px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 56px 56px 48px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  border-radius: 0;
+}
+.news-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--warm-gray);
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 1;
+  padding: 0;
+}
+.news-modal-close:hover { color: var(--text-main); }
+.news-modal-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.news-modal-date {
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.15em;
+  color: var(--warm-gray);
+}
+.news-modal-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--text-sub);
+  border: 1px solid #ddd;
+  padding: 3px 12px;
+}
+.news-modal-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+  color: var(--text-main);
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+.news-modal-body {
+  font-size: 0.9rem;
+  line-height: 2;
+  color: var(--text-sub);
+  font-weight: 400;
+}
+.news-modal-body p { margin-bottom: 16px; }
+.news-modal-body p:last-child { margin-bottom: 0; }
+@keyframes modalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modalSlideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.news-modal.open .news-modal-content { animation: modalSlideIn 0.35s ease; }
+.news-item { cursor: pointer; }
+@media (max-width: 768px) {
+  .news-modal { padding: 20px; }
+  .news-modal-content { padding: 48px 28px 36px; }
+  .news-modal-title { font-size: 1rem; line-height: 1.8; }
+  .news-modal-body { font-size: 0.85rem; line-height: 1.95; }
+}
+
+/* ========== PHOTO STRIP (full-bleed) ========== */
+.photo-strip {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.photo-strip-inner {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  max-height: 560px;
+  overflow: hidden;
+  position: relative;
+}
+.photo-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 1.8s ease;
+}
+.photo-strip:hover img { transform: scale(1.06); }
+.photo-strip-caption {
+  position: absolute;
+  left: 40px;
+  bottom: 32px;
+  color: #fff;
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.3);
+}
+@media (max-width: 768px) {
+  .photo-strip-inner { aspect-ratio: 4 / 5; max-height: none; }
+  .photo-strip-caption { left: 28px; bottom: 24px; font-size: 0.7rem; }
+}
+
+/* ========== PHOTO SCROLL (infinite horizontal gallery) ========== */
+.photo-scroll {
+  padding: 120px 0;
+  overflow: hidden;
+}
+.photo-scroll-head {
+  padding: 0 40px;
+  max-width: 1100px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+.photo-scroll-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+.photo-scroll-viewport:active { cursor: grabbing; }
+.photo-scroll-viewport::-webkit-scrollbar { display: none; height: 0; width: 0; }
+.photo-scroll-track {
+  display: flex;
+  gap: 18px;
+  padding: 0 0 8px;
+  width: max-content;
+}
+.photo-scroll-track::-webkit-scrollbar { display: none; }
+.photo-scroll-item {
+  flex: 0 0 auto;
+  width: 300px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+}
+.photo-scroll-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+.photo-scroll-item:hover img { transform: scale(1.05); }
+.photo-scroll-item .caption {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  color: #fff;
+  font-family: 'Futura', 'Futura PT', 'Jost', 'Century Gothic', 'Avenir Next', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+}
+@media (max-width: 768px) {
+  .photo-scroll { padding: 80px 0 88px; }
+  .photo-scroll-head { padding: 0 28px; margin-bottom: 32px; }
+  .photo-scroll-track { gap: 14px; }
+  .photo-scroll-item { width: 240px; aspect-ratio: 1 / 1; }
+}
+
+/* ========== CONCEPT IMAGES (mobile offset rhythm) ========== */
+.concept-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  margin-top: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.concept-images > div { aspect-ratio: 1; overflow: hidden; }
+@media (max-width: 768px) {
+  .concept-images {
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
+    max-width: none;
+    margin: 56px 0 0;
+  }
+  .concept-images > div { aspect-ratio: auto; }
+  .concept-images > div:nth-child(1) {
+    width: 82%;
+    aspect-ratio: 3 / 4;
+    margin-right: auto;
+  }
+  .concept-images > div:nth-child(2) {
+    width: 56%;
+    aspect-ratio: 1;
+    margin-left: auto;
+    margin-right: 6%;
+    margin-top: -48px;
+    position: relative;
+    z-index: 2;
+  }
+  .concept-images > div:nth-child(3) {
+    width: 70%;
+    aspect-ratio: 4 / 5;
+    margin-left: 14%;
+    margin-top: 20px;
+  }
+}
+
+/* ========== METHOD CARD VARIATION (mobile rhythm) ========== */
+@media (max-width: 768px) {
+  .method-card:nth-child(1) > div:first-child { height: 220px !important; }
+  .method-card:nth-child(2) > div:first-child {
+    height: 180px !important;
+    width: 72% !important;
+    margin-left: auto !important;
+  }
+  .method-card:nth-child(3) > div:first-child { height: 260px !important; }
+  .method-card:nth-child(4) > div:first-child {
+    height: 180px !important;
+    width: 72% !important;
+  }
+}
+
+/* ========== FADE-IN ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo-link">
+      <img src="ロゴヘッダー.png" alt="CLOVER." class="logo-img">
+    </a>
+    <div class="hamburger" id="hamburger" aria-label="menu">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <a href="#news">トピックス</a>
+      <a href="#features">サービス</a>
+      <a href="#concept">コンセプト</a>
+      <a href="#menu">料金</a>
+      <a href="#simulator">プラン診断</a>
+      <a href="#staff">スタッフ</a>
+      <a href="#access">アクセス</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-phone" href="tel:0924039811">092-403-9811</a>
+      <a href="#reserve" class="nav-cta">無料体験</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO SLIDER ===== -->
+<section class="hero" id="top">
+  <div class="hero-slider">
+    <!-- Slide 1: 健康の先に幸せがある。 -->
+    <div class="hero-slide active">
+      <img src="interior-wide.jpg" alt="CLOVER. 店内">
+      <div class="hero-slide-text">
+        <div>
+          <p class="hero-slide-concept">健康の先に、幸せがある。</p>
+          <p class="hero-slide-concept-en">Happiness lies beyond health.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 2: ココロとカラダを整える -->
+    <div class="hero-slide">
+      <img src="session-conditioning.jpg" alt="コンディショニング">
+      <div class="hero-slide-text">
+        <div>
+          <p class="hero-slide-concept">ココロとカラダを整える。</p>
+          <p class="hero-slide-concept-en">Harmonize mind and body.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3: 幸せであり続けるために -->
+    <div class="hero-slide">
+      <img src="condition-bed.jpg" alt="コンディショニング">
+      <div class="hero-slide-text">
+        <div>
+          <p class="hero-slide-concept">幸せであり続けるために、<br>健康であり続ける。</p>
+          <p class="hero-slide-concept-en">Stay healthy, stay happy.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 4: 整えて、鍛えて、動きを身につける -->
+    <div class="hero-slide">
+      <img src="session-machine.jpg" alt="トレーニング">
+      <div class="hero-slide-text">
+        <div>
+          <p class="hero-slide-concept">整えて、鍛えて、<br>動きを身につける。</p>
+          <p class="hero-slide-concept-en">Condition. Train. Move.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 5: ジムでもない、整体でもない -->
+    <div class="hero-slide">
+      <img src="exterior.jpg" alt="CLOVER. 外観">
+      <div class="hero-slide-text">
+        <div>
+          <p class="hero-slide-concept">ジムでもない、整体でもない。<br><span style="font-family:'Futura','Futura PT','Jost','Century Gothic','Avenir Next',sans-serif;font-style:italic;letter-spacing:0.08em;">wellness space</span></p>
+          <p class="hero-slide-concept-en">A new kind of wellness experience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Brand logo removed - logo is in the slide images -->
+  <!-- CTA -->
+  <div class="hero-cta-wrap">
+    <a href="#reserve" class="hero-cta">無料体験を予約する &gt;</a>
+  </div>
+  <!-- Indicators -->
+  <div class="hero-indicators">
+    <div class="hero-indicator active" data-index="0"></div>
+    <div class="hero-indicator" data-index="1"></div>
+    <div class="hero-indicator" data-index="2"></div>
+    <div class="hero-indicator" data-index="3"></div>
+    <div class="hero-indicator" data-index="4"></div>
+  </div>
+</section>
+
+<!-- ===== NEWS MODAL ===== -->
+<div class="news-modal" id="newsModal" role="dialog" aria-modal="true">
+  <div class="news-modal-overlay" data-close></div>
+  <div class="news-modal-content">
+    <button class="news-modal-close" data-close aria-label="閉じる">&times;</button>
+    <div class="news-modal-meta">
+      <span class="news-modal-date"></span>
+      <span class="news-modal-tag"></span>
+    </div>
+    <h2 class="news-modal-title"></h2>
+    <div class="news-modal-body"></div>
+  </div>
+</div>
+
+<!-- ===== NEWS / TOPICS (SALONIA-style: vertical label on left) ===== -->
+<section class="news" id="news">
+  <div class="container">
+    <div class="news-salonia">
+      <div class="v-label-col fade-in" aria-hidden="true">
+        <span class="v-label">TOPICS</span>
+      </div>
+      <div>
+        <div class="news-list fade-in" id="newsList">
+          <a href="#" class="news-item">
+            <span class="news-date">2026.04.15</span>
+            <span class="news-tag">お知らせ</span>
+            <span class="news-title-text">ゴールデンウィーク休業のお知らせ — 5月1日〜5月6日まで休業いたします</span>
+            <div class="news-body">
+              <p>いつもwellness space <span class="brand">CLOVER.</span>をご利用いただきありがとうございます。</p>
+              <p>誠に勝手ながら、ゴールデンウィーク期間中の<strong>2026年5月1日（金）〜5月6日（水）</strong>は休業とさせていただきます。</p>
+              <p>5月7日（木）より通常営業を再開いたします。</p>
+              <p>ご予約・お問い合わせは、休業期間中もLINE・メールにて承っております。お返事は5月7日以降、順次対応させていただきます。</p>
+              <p>ご不便をおかけしますが、何卒よろしくお願い申し上げます。</p>
+            </div>
+          </a>
+          <a href="#" class="news-item">
+            <span class="news-date">2026.04.01</span>
+            <span class="news-tag">キャンペーン</span>
+            <span class="news-title-text">春の無料体験キャンペーン実施中 — 4月末まで入会金50%OFF</span>
+            <div class="news-body">
+              <p>新生活のスタートに、カラダとココロを整える習慣を。</p>
+              <p>4月末までの期間限定で、<strong>無料体験セッション</strong>を受けていただいた方に、<strong>入会金が50%OFF</strong>になるキャンペーンを実施しています。</p>
+              <p>体験では、現在のカラダの状態をチェックし、あなたに合ったプランをご提案します。「運動が久しぶり」「何から始めていいかわからない」という方も、お気軽にお越しください。</p>
+              <p>ご予約はLP下部の予約フォーム、またはお電話（092-403-9811）まで。</p>
+            </div>
+          </a>
+          <a href="#" class="news-item">
+            <span class="news-date">2026.03.15</span>
+            <span class="news-tag">コラム</span>
+            <span class="news-title-text">「整える」と「鍛える」の違い — <span class="brand">CLOVER.</span>が両方を大切にする理由</span>
+            <div class="news-body">
+              <p>「ジムに通っているのに不調が取れない」「整体で整えてもすぐ戻ってしまう」——そんな声をよく耳にします。</p>
+              <p><span class="brand">CLOVER.</span>では、<strong>整える（コンディショニング）</strong>と<strong>鍛える（トレーニング）</strong>を両輪で進めることを大切にしています。</p>
+              <p>整えるだけでは、日常の動きのクセで元に戻ってしまう。鍛えるだけでは、すでにあるアンバランスをさらに強化してしまう。だからこそ、まずカラダを整えて良い状態を作り、その上で必要な筋力をつけ、最後に「動き方」そのものを変えていく。</p>
+              <p>この3ステップが、<span class="brand">CLOVER.</span>のパーソナルセッションの骨格です。</p>
+            </div>
+          </a>
+          <a href="#" class="news-item is-hidden">
+            <span class="news-date">2026.03.01</span>
+            <span class="news-tag">お知らせ</span>
+            <span class="news-title-text">セルフトレーニングエリア 新マシン導入のお知らせ</span>
+            <div class="news-body">
+              <p>会員の皆様にご利用いただいているセルフトレーニングエリアに、新しいマシンを導入しました。</p>
+              <p>より多くのトレーニングバリエーションに対応できるよう、機能性の高いラインナップを揃えています。使い方が分からない場合は、スタッフにお気軽にお声がけください。</p>
+              <p>会員の方はセルフトレーニング無料でご利用いただけます。ご予約は専用アプリから承っております。</p>
+            </div>
+          </a>
+          <a href="#" class="news-item is-hidden">
+            <span class="news-date">2026.02.14</span>
+            <span class="news-tag">お客様の声</span>
+            <span class="news-title-text">50代男性「通い始めて半年、ゴルフの飛距離が戻りました」</span>
+            <div class="news-body">
+              <p>通い始めて半年になる50代男性の会員様から、嬉しいお声をいただきました。</p>
+              <p>「40代後半から腰と肩の慢性的な違和感があり、趣味のゴルフでも飛距離が年々落ちていました。<span class="brand">CLOVER.</span>で肩甲骨まわりと股関節を整え、体幹の使い方を覚え直したところ、半年で20ヤードほど飛距離が戻り、何よりラウンド後の疲れ方が全然違います。」</p>
+              <p>カラダを整えることは、健康だけでなく、好きなことを長く楽しむための土台になります。<span class="brand">CLOVER.</span>は、お客様のそんな日常を支えていきます。</p>
+            </div>
+          </a>
+        </div>
+        <div class="news-toggle-wrap fade-in">
+          <button type="button" class="news-toggle" id="newsToggle" aria-expanded="false" aria-controls="newsList">
+            <span class="news-toggle-text">TOPICS LIST</span>
+            <span class="chev" aria-hidden="true">&gt;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFITS ===== -->
+<section class="benefits" id="benefits">
+  <div class="container">
+    <div class="fade-in" style="text-align: center;">
+      <p class="section-label">Benefits</p>
+      <h2 class="section-title"><span class="brand">CLOVER.</span>が選ばれる5つの理由</h2>
+      <p class="section-lead" style="margin:0 auto;">通いやすさと集中できる環境。<br>あなたのウェルネス習慣を支える5つの特徴。</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card fade-in">
+        <div class="benefit-image"><img src="interior-vertical.jpg" alt="完全個室"></div>
+        <div class="benefit-body">
+          <p class="benefit-num">01</p>
+          <h3 class="benefit-title">完全個室</h3>
+          <p class="benefit-text">
+            他の人の目を気にせず、<br>
+            自分のカラダに集中。<br>
+            お子様連れでも安心です。
+          </p>
+        </div>
+      </div>
+      <div class="benefit-card fade-in">
+        <div class="benefit-image"><img src="exterior.jpg" alt="駐車場2台完備"></div>
+        <div class="benefit-body">
+          <p class="benefit-num">02</p>
+          <h3 class="benefit-title">駐車場2台完備</h3>
+          <p class="benefit-text">
+            お車での来店もラクラク。<br>
+            荷物が多い日や雨の日も、<br>
+            駐車の心配がいりません。
+          </p>
+        </div>
+      </div>
+      <div class="benefit-card fade-in">
+        <div class="benefit-image"><img src="staff-twoshot.jpg" alt="専属担当制"></div>
+        <div class="benefit-body">
+          <p class="benefit-num">03</p>
+          <h3 class="benefit-title">専属担当制</h3>
+          <p class="benefit-text">
+            毎回同じスタッフが担当。<br>
+            カラダの変化を長期的に<br>
+            見守り、伴走します。
+          </p>
+        </div>
+      </div>
+      <div class="benefit-card fade-in">
+        <div class="benefit-image"><img src="machines.jpg" alt="セルフ利用無料"></div>
+        <div class="benefit-body">
+          <p class="benefit-num">04</p>
+          <h3 class="benefit-title">セルフ利用無料</h3>
+          <p class="benefit-text">
+            メンバーなら、営業時間中は<br>
+            いつでも無料で使い放題。<br>
+            習慣化を後押しします。
+          </p>
+        </div>
+      </div>
+      <div class="benefit-card fade-in">
+        <div class="benefit-image"><img src="smartlock.jpg" alt="かんたん予約"></div>
+        <div class="benefit-body">
+          <p class="benefit-num">05</p>
+          <h3 class="benefit-title">かんたん予約</h3>
+          <p class="benefit-text">
+            24時間いつでもWebから<br>
+            予約・変更が可能。<br>
+            空き状況もひと目で。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHOTO STRIP (full-bleed breather) ===== -->
+<section class="photo-strip fade-in" aria-hidden="true">
+  <div class="photo-strip-inner">
+    <img src="interior-wide.jpg" alt="">
+    <span class="photo-strip-caption">Space &mdash; wellness studio</span>
+  </div>
+</section>
+
+<!-- ===== SERVICE (= SALONIA's PRODUCT position) ===== -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="fade-in" style="text-align: center;">
+      <p class="section-label">Service</p>
+      <h2 class="section-title"><span class="brand">CLOVER.</span>の3つのアプローチ</h2>
+      <p class="section-lead" style="margin:0 auto;">ジムでもない、整体でもない。<br>あなたの状態に合わせて、3つのメソッドを組み合わせます。</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <div style="width:100%;height:200px;overflow:hidden;margin-bottom:24px;"><img src="condition-bed.jpg" alt="コンディショニング" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="feature-num">01</div>
+        <h3 class="feature-title">Conditioning<br><span style="font-size:0.78rem;font-weight:400;color:var(--text-sub);">コンディショニング</span></h3>
+        <p class="feature-text">
+          足の長さ・肋骨の角度・筋肉の硬さなど、<br>
+          自分では気づけないカラダの状態を分析。<br>
+          スポーツマッサージやストレッチで歪みを整え、<br>
+          慢性症状が改善しやすい状態をつくります。
+        </p>
+      </div>
+      <div class="feature-card fade-in">
+        <div style="width:100%;height:200px;overflow:hidden;margin-bottom:24px;"><img src="session-machine.jpg" alt="トレーニング" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="feature-num">02</div>
+        <h3 class="feature-title">Training<br><span style="font-size:0.78rem;font-weight:400;color:var(--text-sub);">トレーニング</span></h3>
+        <p class="feature-text">
+          解剖学とトレーニング原理に基づき、<br>
+          構造体トレーニングと機能的トレーニングを融合。<br>
+          代償動作を確認しながら、<br>
+          あなたに最適な強度でプログラムを進めます。
+        </p>
+      </div>
+      <div class="feature-card fade-in">
+        <div style="width:100%;height:200px;overflow:hidden;margin-bottom:24px;"><img src="body-measurement.jpg" alt="動作改善" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="feature-num">03</div>
+        <h3 class="feature-title">Movement<br><span style="font-size:0.78rem;font-weight:400;color:var(--text-sub);">動作改善</span></h3>
+        <p class="feature-text">
+          日常生活の「動き方」そのものを変えていく。<br>
+          セッションで整えた状態を、<br>
+          普段の姿勢・歩き方・所作に落とし込み、<br>
+          カラダが自然と良い状態をキープできるように。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONCEPT (= SALONIA's ABOUT position) ===== -->
+<section class="concept" id="concept">
+  <div class="container">
+    <div class="concept-inner fade-in">
+      <p class="section-label">About</p>
+      <h2 class="concept-catch">
+        幸せであり続けるために、<br>
+        <em>健康であり続ける。</em>
+      </h2>
+      <div class="concept-divider"></div>
+      <p class="concept-text">
+        カラダがなんとなくきつい。<br>
+        慢性的な不調を、どうにかしたい。<br>
+        もっと前向きな自分になりたい。<br><br>
+        カラダとココロの不調は、<br>
+        筋肉やホルモンのアンバランスが招いています。<br><br>
+        整えて、鍛えて、日常の動きを変えていく。<br>
+        それが <span class="brand">CLOVER.</span> のパーソナルセッション。<br><br>
+        ここは、あなたのココロとカラダを<br>
+        整えるウェルネススペースです。
+      </p>
+      <div class="concept-divider"></div>
+      <div class="concept-images">
+        <div><img src="session-conditioning.jpg" alt="コンディショニング" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div><img src="interior-square.jpg" alt="トレーニングエリア" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div><img src="shoulder-care.jpg" alt="セッション風景" style="width:100%;height:100%;object-fit:cover;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOICE (= SALONIA's COLUMN position) ===== -->
+<section class="voice" id="voice">
+  <div class="container">
+    <div class="fade-in" style="text-align: center;">
+      <p class="section-label">Voice</p>
+      <h2 class="section-title">お客様の声</h2>
+      <p class="section-lead" style="margin:0 auto;"><span class="brand">CLOVER.</span>に通うお客様のリアルな変化をご紹介します。</p>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card fade-in">
+        <p class="voice-meta">30代 女性</p>
+        <p class="voice-purpose">目的：メンタルの安定・姿勢改善</p>
+        <p class="voice-text">落ち込むことが多かったので、精神を安定させたい＆姿勢改善を目的に入会しました。通い始めてからカラダだけでなく気持ちも前向きになれて、毎日が楽しくなりました。</p>
+      </div>
+      <div class="voice-card fade-in">
+        <p class="voice-meta">50代 男性</p>
+        <p class="voice-purpose">目的：ダイエット・体の引き締め</p>
+        <p class="voice-text">「健康的に身体を引き締めたい」という目標を持ち、パーソナルジムに入会しました。自分の体の状態を丁寧に分析してもらえて、無理なく続けられています。</p>
+      </div>
+      <div class="voice-card fade-in">
+        <p class="voice-meta">60代 女性</p>
+        <p class="voice-purpose">目的：膝痛の改善</p>
+        <p class="voice-text">変形性膝関節症で注射などを受けていましたが、それ以上の回復が見られず。こちらに通い始めてから、根本的なアプローチで改善を実感しています。</p>
+      </div>
+      <div class="voice-card fade-in">
+        <p class="voice-meta">70代 男性</p>
+        <p class="voice-purpose">目的：健康維持・筋力アップ</p>
+        <p class="voice-text">知人に「自分のカラダに投資した方がいい」と言われ入会。筋力がつき、ゴルフスイングが力強くなったと言われ、5年前の飛距離がまた出るようになりました。これからも健康でゴルフを楽しんで生きていきたいです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHOTO SCROLL (infinite horizontal gallery) ===== -->
+<section class="photo-scroll fade-in" aria-label="gallery">
+  <div class="photo-scroll-head">
+    <p class="section-label">Gallery</p>
+    <h2 class="section-title">ギャラリー</h2>
+  </div>
+  <div class="photo-scroll-viewport" id="galleryViewport">
+    <div class="photo-scroll-track" id="galleryTrack" aria-hidden="false">
+      <!-- 1周目 -->
+      <div class="photo-scroll-item"><img src="interior-vertical.jpg" alt=""><span class="caption">Entrance</span></div>
+      <div class="photo-scroll-item"><img src="machines.jpg" alt=""><span class="caption">Training</span></div>
+      <div class="photo-scroll-item"><img src="hallway.jpg" alt=""><span class="caption">Hallway</span></div>
+      <div class="photo-scroll-item"><img src="condition-bed.jpg" alt=""><span class="caption">Conditioning</span></div>
+      <div class="photo-scroll-item"><img src="session-squat.jpg" alt=""><span class="caption">Session</span></div>
+      <div class="photo-scroll-item"><img src="interior-square.jpg" alt=""><span class="caption">Space</span></div>
+      <!-- 2周目（無限ループ用クローン・aria-hidden） -->
+      <div class="photo-scroll-item" aria-hidden="true"><img src="interior-vertical.jpg" alt=""><span class="caption">Entrance</span></div>
+      <div class="photo-scroll-item" aria-hidden="true"><img src="machines.jpg" alt=""><span class="caption">Training</span></div>
+      <div class="photo-scroll-item" aria-hidden="true"><img src="hallway.jpg" alt=""><span class="caption">Hallway</span></div>
+      <div class="photo-scroll-item" aria-hidden="true"><img src="condition-bed.jpg" alt=""><span class="caption">Conditioning</span></div>
+      <div class="photo-scroll-item" aria-hidden="true"><img src="session-squat.jpg" alt=""><span class="caption">Session</span></div>
+      <div class="photo-scroll-item" aria-hidden="true"><img src="interior-square.jpg" alt=""><span class="caption">Space</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MENU & PRICING ===== -->
+<section class="menu" id="menu">
+  <div class="container">
+    <div class="menu-intro fade-in">
+      <p class="section-label">Menu &amp; Pricing</p>
+      <h2 class="section-title">メニュー・料金</h2>
+      <p class="section-lead" style="margin: 0 auto;">
+        シンプルな料金体系。メンバー料金＋セッション料金の組み合わせで、あなたに合った通い方が見つかります。
+      </p>
+    </div>
+
+    <div class="entry-fee fade-in">
+      <span class="entry-fee-label">入会金</span>
+      <span class="entry-fee-price">&yen;13,200</span>
+      <span class="tax-label">（税込）</span>
+    </div>
+
+    <div class="pricing-system fade-in">
+      <p class="pricing-system-title">月額料金のしくみ</p>
+      <p class="pricing-system-sub">メンバー料金とセッション料金の組み合わせ</p>
+      <div class="pricing-formula">
+        <div class="formula-box formula-result">月額料金</div>
+        <span class="formula-op">=</span>
+        <div class="formula-box formula-member">メンバー料金<small>（スタンダード or プレミアム）</small></div>
+        <span class="formula-op">+</span>
+        <div class="formula-box formula-session">セッション料金<small>（スタッフ単価 &times; 回数）</small></div>
+      </div>
+    </div>
+
+    <div class="member-fee-group fade-in">
+      <div class="member-fee-heading">
+        <p class="member-fee-heading-label">Member Fee</p>
+        <h3 class="member-fee-heading-title">メンバー料金</h3>
+        <p class="member-fee-heading-sub">2つのプランからお選びいただけます</p>
+      </div>
+
+    <div class="pricing-tables">
+      <div class="pricing-table standard">
+        <div class="pricing-table-header">スタンダード</div>
+        <p class="pricing-table-member-fee">月額 <strong>&yen;6,600</strong><span class="tax-label">（税込）</span></p>
+        <ul class="pricing-table-features">
+          <li>30日先まで予約可能</li>
+          <li>完全個室でのセルフトレーニング無料</li>
+        </ul>
+      </div>
+      <div class="pricing-table premium">
+        <div class="pricing-table-header">プレミアム</div>
+        <p class="pricing-table-member-fee">月額 <strong>&yen;11,000</strong><span class="tax-label">（税込）</span></p>
+        <ul class="pricing-table-features">
+          <li>60日先まで予約可能</li>
+          <li>曜日・時間の固定予約が可能（月4回契約に限る）</li>
+          <li>完全個室でのセルフトレーニング無料</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
+    <div class="staff-rank fade-in">
+      <h3>スタッフランク別 セッション単価</h3>
+      <div class="rank-list">
+        <div class="rank-item">
+          <div><span class="rank-name">ウェルネスサポーター</span></div>
+          <span class="rank-price">60分 &yen;4,950<span class="tax-label">（税込）</span></span>
+        </div>
+        <div class="rank-item">
+          <div><span class="rank-name">ウェルネスコーチ</span><span class="rank-person">　りさ</span></div>
+          <span class="rank-price">60分 &yen;6,050<span class="tax-label">（税込）</span></span>
+        </div>
+        <div class="rank-item">
+          <div><span class="rank-name">ウェルネスコーディネーター</span><span class="rank-person">　ゆうじ</span></div>
+          <span class="rank-price">60分 &yen;7,150<span class="tax-label">（税込）</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-section fade-in">
+      <h3>メンバーステージ割引</h3>
+      <p>通い続けるほどお得に。メンバー料金がステージに応じて割引されます。</p>
+      <div class="stage-list">
+        <span class="stage-badge">
+          <span class="stage-name">ビギナー</span>
+          <span class="stage-year">1年未満</span>
+          <strong>割引なし</strong>
+        </span>
+        <span class="stage-badge">
+          <span class="stage-name">レギュラー</span>
+          <span class="stage-year">1年以上</span>
+          <strong>5%OFF</strong>
+        </span>
+        <span class="stage-badge">
+          <span class="stage-name">ブロンズ</span>
+          <span class="stage-year">3年以上</span>
+          <strong>10%OFF</strong>
+        </span>
+        <span class="stage-badge">
+          <span class="stage-name">シルバー</span>
+          <span class="stage-year">5年以上</span>
+          <strong>20%OFF</strong>
+        </span>
+        <span class="stage-badge">
+          <span class="stage-name">ゴールド</span>
+          <span class="stage-year">7年以上</span>
+          <strong>30%OFF</strong>
+        </span>
+        <span class="stage-badge">
+          <span class="stage-name">プラチナ</span>
+          <span class="stage-year">10年以上</span>
+          <strong>50%OFF</strong>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== SIMULATOR (= SALONIA's SELECT position) ===== -->
+<section class="simulator" id="simulator">
+  <div class="container">
+    <div class="fade-in" style="text-align: center;">
+      <p class="section-label">Plan Diagnosis</p>
+      <h2 class="section-title">あなたにぴったりのプランは？</h2>
+      <p class="section-lead" style="margin: 0 auto;">3つの質問に答えるだけで、<br>おすすめのプランとスタッフがわかります。</p>
+    </div>
+
+    <div class="sim-container fade-in">
+      <!-- Progress Steps -->
+      <div class="sim-progress">
+        <div class="sim-progress-bar" id="simProgressBar"></div>
+      </div>
+      <div class="sim-steps">
+        <div class="sim-step active" id="simStep1"><span>1</span> 通い方</div>
+        <div class="sim-step" id="simStep2"><span>2</span> 目的</div>
+        <div class="sim-step" id="simStep3"><span>3</span> 回数</div>
+        <div class="sim-step" id="simStepR"><span>✓</span> 結果</div>
+      </div>
+
+      <!-- Step 1: 通い方 -->
+      <div id="simPanel1" style="display:block;">
+        <p class="sim-question">どんな通い方をしたいですか？</p>
+        <p class="sim-hint">予約スタイルに合わせてプランが決まります</p>
+        <div class="sim-options">
+          <button class="sim-option" onclick="simSelect(1,'flexible')">
+            <span class="sim-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 9h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg></span>
+            <span><span class="sim-option-title">自由に予約したい</span><span class="sim-option-desc">空いている日時に都度予約するスタイル</span></span>
+          </button>
+          <button class="sim-option" onclick="simSelect(1,'fixed')">
+            <span class="sim-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <span><span class="sim-option-title">曜日・時間を固定したい</span><span class="sim-option-desc">毎週決まった曜日・時間で習慣化</span></span>
+          </button>
+          <button class="sim-option" onclick="simSelect(1,'early')">
+            <span class="sim-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span>
+            <span><span class="sim-option-title">早めに予約を押さえたい</span><span class="sim-option-desc">60日前から予約可能で安心</span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: 目的 -->
+      <div id="simPanel2" style="display:none;">
+        <p class="sim-question">一番の目的を教えてください</p>
+        <p class="sim-hint">目的に合った専門スタッフをご提案します</p>
+        <div class="sim-options">
+          <button class="sim-option" onclick="simSelect(2,'pain')">
+            <span class="sim-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.8 11.3a5 5 0 0 0-7.1-7.1L12 5.9l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 20.3Z"/></svg></span>
+            <span><span class="sim-option-title">カラダの痛み・不調を改善したい</span><span class="sim-option-desc">肩こり・腰痛・膝痛などの根本改善</span></span>
+          </button>
+          <button class="sim-option" onclick="simSelect(2,'training')">
+            <span class="sim-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 9v6"/><path d="M3.5 11v2"/><path d="M17.5 9v6"/><path d="M20.5 11v2"/><path d="M8 12h8"/></svg></span>
+            <span><span class="sim-option-title">トレーニング・ボディメイクしたい</span><span class="sim-option-desc">筋力UP・ダイエット・体型づくり</span></span>
+          </button>
+          <button class="sim-option" onclick="simSelect(2,'holistic')">
+            <span class="sim-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3C8 6 8 11 12 14"/><path d="M12 3C16 6 16 11 12 14"/><path d="M12 14v7"/><path d="M8 18h8"/></svg></span>
+            <span><span class="sim-option-title">整えながら鍛えたい</span><span class="sim-option-desc">コンディショニング＋トレーニングの両方</span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: 回数 -->
+      <div id="simPanel3" style="display:none;">
+        <p class="sim-question">月に何回くらい通いたいですか？</p>
+        <p class="sim-hint">セッション回数で月額料金が変わります</p>
+        <div class="sim-options sim-options-row">
+          <button class="sim-option sim-option-small" onclick="simSelect(3,1)">
+            <span class="sim-option-title">月1回</span>
+            <span class="sim-option-desc">まずはお試し</span>
+          </button>
+          <button class="sim-option sim-option-small" onclick="simSelect(3,2)">
+            <span class="sim-option-title">月2回</span>
+            <span class="sim-option-desc">ゆっくりペース</span>
+          </button>
+          <button class="sim-option sim-option-small" onclick="simSelect(3,3)">
+            <span class="sim-option-title">月3回</span>
+            <span class="sim-option-desc">おすすめ</span>
+          </button>
+          <button class="sim-option sim-option-small" onclick="simSelect(3,4)">
+            <span class="sim-option-title">月4回</span>
+            <span class="sim-option-desc">しっかり習慣化</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Back Button -->
+      <div id="simBackWrap" style="display:none; text-align:center; margin-top:16px;">
+        <button onclick="simBack()" style="background:none; border:1px solid var(--green-main); color:var(--green-main); padding:8px 24px; border-radius:24px; cursor:pointer; font-size:0.85rem;">← 前の質問に戻る</button>
+      </div>
+
+      <!-- Result Panel -->
+      <div class="sim-panel" id="simResult" style="display:none;">
+        <div class="sim-result-header">
+          <p style="font-size:0.85rem; color:var(--warm-gray);">診断結果</p>
+          <p style="font-size:1.3rem; font-weight:600; color:var(--green-deep); margin-top:4px;">あなたにおすすめのプラン</p>
+        </div>
+
+        <div class="sim-result-cards">
+          <div class="sim-result-plan">
+            <div class="sim-result-plan-badge" id="resPlanBadge">スタンダード</div>
+            <p class="sim-result-plan-reason" id="resPlanReason"></p>
+          </div>
+          <div class="sim-result-staff">
+            <div class="sim-result-staff-icon">🧘</div>
+            <p class="sim-result-staff-role" id="resStaffRole"></p>
+            <p class="sim-result-staff-name" id="resStaffName"></p>
+            <p class="sim-result-staff-reason" id="resStaffReason"></p>
+          </div>
+        </div>
+
+        <div class="sim-result-cost">
+          <table class="sim-cost-table">
+            <tr><td>会員費（月額）</td><td id="resMemberFee">¥6,600</td></tr>
+            <tr><td>セッション単価</td><td id="resUnit">¥6,050</td></tr>
+            <tr><td>月間セッション回数</td><td id="resTimes">2</td></tr>
+            <tr><td>セッション小計</td><td id="resSessionFee">¥12,100</td></tr>
+            <tr class="sim-cost-total"><td>月額目安（税込）</td><td id="resTotal">¥18,700</td></tr>
+          </table>
+          <p style="font-size:0.75rem; color:var(--warm-gray); margin-top:12px; text-align:center;">※ 初回は別途入会金 ¥13,200（税込）が必要です<br>※ 継続ステージ割引で最大50%OFFになります</p>
+        </div>
+
+        <div style="text-align:center; margin-top:24px;">
+          <button onclick="simReset()" style="background:var(--green-main); color:#fff; border:none; padding:12px 32px; border-radius:28px; cursor:pointer; font-size:0.9rem; font-weight:600;">もう一度診断する</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== METHOD / HOW TO (= SALONIA's HOW TO position) ===== -->
+<section class="method" id="method">
+  <div class="container">
+    <div class="fade-in" style="text-align: center;">
+      <p class="section-label">How To</p>
+      <h2 class="section-title">ご利用の流れ</h2>
+      <p class="section-lead" style="margin:0 auto;">はじめての方も安心。無料体験からスタートできます。</p>
+    </div>
+    <div class="method-grid">
+      <div class="method-card fade-in">
+        <div style="width:100%;height:160px;overflow:hidden;margin-bottom:20px;"><img src="exterior.jpg" alt="無料体験のご予約" style="width:100%;height:100%;object-fit:cover;"></div>
+        <p class="method-num">Step 01</p>
+        <h3 class="method-title">無料体験のご予約</h3>
+        <p class="method-text">
+          お電話またはWebフォームから、ご都合の良い日時をお選びください。所要時間は約60〜90分。お着替え・カウンセリング・体験セッションを含みます。
+        </p>
+      </div>
+      <div class="method-card fade-in">
+        <div style="width:100%;height:160px;overflow:hidden;margin-bottom:20px;"><img src="session-risa-guide.jpg" alt="カウンセリング＆カラダ分析" style="width:100%;height:100%;object-fit:cover;"></div>
+        <p class="method-num">Step 02</p>
+        <h3 class="method-title">カウンセリング＆カラダ分析</h3>
+        <p class="method-text">
+          お悩みや目標を丁寧にヒアリング。足の長さ・肋骨の角度・筋肉の硬さなど、あなたのカラダの状態を分析し、最適なアプローチをご提案します。
+        </p>
+      </div>
+      <div class="method-card fade-in">
+        <div style="width:100%;height:160px;overflow:hidden;margin-bottom:20px;"><img src="session-conditioning.jpg" alt="体験セッション" style="width:100%;height:100%;object-fit:cover;"></div>
+        <p class="method-num">Step 03</p>
+        <h3 class="method-title">体験セッション</h3>
+        <p class="method-text">
+          コンディショニングとトレーニングを実際に体験。ビフォーアフターでカラダの変化を実感していただけます。無理な勧誘は一切ありません。
+        </p>
+      </div>
+      <div class="method-card fade-in">
+        <div style="width:100%;height:160px;overflow:hidden;margin-bottom:20px;"><img src="smartlock.jpg" alt="セキュリティ入退室" style="width:100%;height:100%;object-fit:cover;"></div>
+        <p class="method-num">Step 04</p>
+        <h3 class="method-title">ご入会・セッション開始</h3>
+        <p class="method-text">
+          プランとスタッフをお選びいただき、あなただけのプログラムがスタート。専属担当制で、毎回同じスタッフが責任を持って担当します。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STAFF ===== -->
+<section class="staff" id="staff">
+  <div class="container">
+    <div class="fade-in" style="text-align: center;">
+      <p class="section-label">Staff</p>
+      <h2 class="section-title">スタッフ紹介</h2>
+      <p class="section-lead" style="margin:0 auto;">プロフェッショナルとは「幸せをカタチにする人」。<br>ココロとカラダを整えるプロが、あなたの健康をつくります。</p>
+    </div>
+    <div class="staff-grid">
+      <div class="staff-card fade-in">
+        <div class="staff-photo"><img src="staff-yuji.jpg" alt="優志 -yuji- wellness space CLOVER." style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="staff-info">
+          <p class="staff-role">Wellness Coordinator</p>
+          <h3 class="staff-name">優志 -yuji-</h3>
+          <p class="staff-name-en">代表コーディネーター</p>
+          <dl class="staff-bio">
+            <dt>経歴</dt>
+            <dd>福岡県大野城市出身。総合学園ヒューマンアカデミー福岡校スポーツカレッジ卒業後、整骨院でセラピスト兼トレーナー、フィットネスクラブでパーソナルトレーナーとして活動。2018年12月、福岡市南区に wellness space <span class="brand">CLOVER.</span> をオープン。</dd>
+            <dt>性格</dt>
+            <dd>仕事中は几帳面で真面目。プライベートは適当、息子に溺愛。</dd>
+          </dl>
+          <div class="staff-message">
+            「ココロとカラダを整えて、あなたの人生変えます！」<br>
+            カラダとココロが整うと、毎日がとても楽しくなり幸せな日々をおくることができます。一生に一度きりの人生、1日1日笑顔で楽しく生きていきましょう！
+          </div>
+        </div>
+      </div>
+      <div class="staff-card fade-in">
+        <div class="staff-photo"><img src="staff-risa.jpg" alt="莉沙 -risa- wellness space CLOVER." style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="staff-info">
+          <p class="staff-role">Wellness Coach</p>
+          <h3 class="staff-name">莉沙 -risa-</h3>
+          <p class="staff-name-en">コンディショニングトレーナー</p>
+          <dl class="staff-bio">
+            <dt>経歴</dt>
+            <dd>福岡県田川市出身。福岡医健専門学校スポーツ科学科スポーツトレーナーコース卒業後、フィットネスクラブでパーソナルトレーナーとして活動。2019年第一子出産を経て、2023年10月より<span class="brand">CLOVER.</span>にて活動再開。</dd>
+            <dt>性格</dt>
+            <dd>明るい、人懐っこい。仕事は几帳面。プライベートはズボラ。</dd>
+          </dl>
+          <div class="staff-message">
+            産後太りを経験し、ピーク体重からマイナス10kgを達成。ママが健康でいることが、家族の幸せに繋がると思っています。産後太りを経験してるママさん、一緒にきれいになりませんか？
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROFILE (OWNER STORY) ===== -->
+<section class="profile" id="profile">
+  <div class="container">
+    <div class="fade-in" style="text-align: center;">
+      <p class="section-label">Owner's Story</p>
+      <h2 class="section-title"><span class="brand">CLOVER.</span>を始めた想い</h2>
+    </div>
+    <div class="profile-inner fade-in">
+      <div class="profile-photo"><img src="staff-yuji.jpg" alt="優志 -yuji- CLOVER.代表" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+      <div>
+        <h3 class="profile-name">優志</h3>
+        <p class="profile-name-en">Yuji &#12288;/&#12288;幸せをカタチにする株式会社 代表</p>
+        <div class="profile-text">
+          <p>
+            「幸せをカタチにする」——
+            これが僕の人生のテーマであり、会社の名前でもあります。
+          </p>
+          <p>
+            幸せとは、欲があるから生まれるもの。
+            欲があるから行動し、体験し、そこから喜びや気づきが生まれる。
+            そのサイクルを回し続けるために、
+            心と体の健康は欠かせないと思っています。
+          </p>
+          <p>
+            <span class="brand">CLOVER.</span>は「ジムでもない、整体でもない」場所。
+            あなたのカラダの声を聴きながら、整えて、鍛えて、動きを身につける。
+            ここに来ると、少し前向きになれる——
+            そんなウェルネススペースを目指しています。
+          </p>
+          <p>
+            「健康の先に幸せがある」。
+            このミッションのもと、短期的な変化ではなく、
+            幸せでありつづけるための健康を、一緒につくっていきます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ (SALONIA-style: vertical label on right) ===== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-salonia">
+      <div>
+        <div class="faq-list fade-in" id="faqList">
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">運動経験がなくても大丈夫ですか？</div>
+            <div class="faq-a"><div class="faq-a-inner">はい、問題ありません。現在の体力レベルに合わせ、まずは関節や筋肉を整えてから、最適なフォーム・適切な負荷でトレーニングを行います。都度体調を確認しながら進めますので、運動経験がなくても安心してお越しください。</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">子連れ・赤ちゃん連れでも通えますか？</div>
+            <div class="faq-a"><div class="faq-a-inner">はい、問題ありません。完全個室のため、お子様連れで通われている方も多いです。一緒にストレッチしたり、コミュニケーションを取りながら進めていきます。お気軽にご相談ください。</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">40代・50代・60代でも変われますか？</div>
+            <div class="faq-a"><div class="faq-a-inner">いつ始めても遅いということはありません。一人ひとりに合わせたプログラムを組みますので、年齢・性別に関係なくご利用いただけます。小学生から70歳を超える方まで幅広くお越しいただいています。</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">食事制限はありますか？</div>
+            <div class="faq-a"><div class="faq-a-inner">極端な食事制限や糖質制限は推奨しません。1日の摂取・消費カロリーなど、ご自身でコントロールできるよう「栄養に関する学び」を提供します。プラン卒業後も自立して食事管理できるところまで目指します。</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">他のパーソナルジムとの違いは？</div>
+            <div class="faq-a"><div class="faq-a-inner">カラダの状態を分析・調整できる経験豊富なスタッフがいること、そして「ココロとカラダを整える」というミッションのもと、専属担当が一人ひとりに全力でコミットすることが大きな違いです。短期的な変化ではなく、健康の先にある幸せを一緒に目指します。</div></div>
+          </div>
+          <div class="faq-item is-hidden">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">リバウンドが心配です。</div>
+            <div class="faq-a"><div class="faq-a-inner">ご安心ください。極端な制限の反動でリバウンドすることがないよう、おいしく三食食べる習慣を維持しながら進めます。また、長期でも通いやすいプランをご用意しており、運動習慣が身につくまでしっかりサポートします。「健康の先に幸せがある」という理念のもと、続けられる習慣づくりを大切にしています。</div></div>
+          </div>
+          <div class="faq-item is-hidden">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">女性がトレーニングしてムキムキになりませんか？</div>
+            <div class="faq-a"><div class="faq-a-inner">ホルモンの関係で女性はムキムキになりませんのでご安心ください。女性には筋肉を発達させるテストステロンが少ないため、綺麗に美しく痩せるためにこそウェイトトレーニングが効果的です。</div></div>
+          </div>
+          <div class="faq-item is-hidden">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">更衣室はありますか？</div>
+            <div class="faq-a"><div class="faq-a-inner">完全個室ですので、鍵を閉めてお部屋でお着替えいただけます。ご安心ください。</div></div>
+          </div>
+        </div>
+        <div class="faq-toggle-wrap fade-in">
+          <button type="button" class="faq-toggle" id="faqToggle" aria-expanded="false" aria-controls="faqList">
+            <span class="faq-toggle-text">FAQ LIST</span>
+            <span class="chev" aria-hidden="true">&gt;</span>
+          </button>
+        </div>
+      </div>
+      <div class="v-label-col fade-in" aria-hidden="true">
+        <span class="v-label">FAQ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACCESS ===== -->
+<section class="access" id="access">
+  <div class="container">
+    <div class="fade-in" style="text-align: center;">
+      <p class="section-label">Access</p>
+      <h2 class="section-title">アクセス</h2>
+    </div>
+    <div class="access-inner fade-in">
+      <div class="access-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.4669887802916!2d130.4173018!3d33.56722240000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191ec95c571d7%3A0xcae5e9d0eafa7550!2zd2VsbG5lc3Mgc3BhY2UgQ0xPVkVSLiAoIOOCpuOCp-ODq-ODjeOCuSDjgrnjg5rjg7zjgrkg44Kv44Ot44O844OQ44O8ICk!5e0!3m2!1sja!2sjp!4v1776318132467!5m2!1sja!2sjp"
+          width="100%" height="100%" style="border:0;display:block;"
+          allowfullscreen=""
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="wellness space CLOVER. アクセスマップ"></iframe>
+      </div>
+      <div class="access-info-list">
+        <div class="access-item">
+          <p class="access-item-label">Address</p>
+          <p class="access-item-value">
+            〒815-0035<br>
+            福岡県福岡市南区玉川町6-5<br>
+            西島ビル 101号室
+          </p>
+        </div>
+        <div class="access-item">
+          <p class="access-item-label">Station</p>
+          <p class="access-item-value">西鉄高宮駅から徒歩5分</p>
+        </div>
+        <div class="access-item">
+          <p class="access-item-label">Parking</p>
+          <p class="access-item-value">駐車場 2台完備</p>
+        </div>
+        <div class="access-item">
+          <p class="access-item-label">Hours</p>
+          <p class="access-item-value">
+            パーソナル：10:00〜21:00（日・祝休み）<br>
+            セルフトレーニング：7:00〜22:15（定休日なし）
+          </p>
+        </div>
+        <div class="access-item">
+          <p class="access-item-label">Tel</p>
+          <p class="access-item-value"><a href="tel:0924039811" style="color:inherit;">092-403-9811</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="reserve">
+  <div class="container">
+    <div class="fade-in">
+      <h2 class="cta-title">
+        まずは無料体験で、<br>
+        あなたのカラダの声を聴いてみませんか？
+      </h2>
+      <p class="cta-sub">お気軽にお問い合わせください</p>
+      <div class="cta-buttons">
+        <a href="#" class="cta-button">無料体験を予約する &gt;</a>
+        <a href="tel:0924039811" class="cta-phone">&#x1f4de; 092-403-9811</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <!-- ロゴ -->
+    <img src="ロゴフッター.png" alt="CLOVER." class="footer-logo-img" style="height:48px;margin:0 auto 12px;display:block;filter:brightness(0) invert(1);opacity:0.7;">
+    <p class="footer-name"><span class="brand">CLOVER.</span></p>
+    <p class="footer-sub">wellness space</p>
+    <p class="footer-address">
+      福岡県福岡市南区玉川町6-5 西島ビル101号室
+    </p>
+    <p class="footer-phone">092-403-9811</p>
+    <p class="footer-hours">
+      パーソナル：10:00〜21:00（日・祝休み）<br>
+      セルフ：7:00〜22:15（定休日なし）
+    </p>
+    <p class="footer-copy">&copy; 2018 wellness space <span class="brand">CLOVER.</span></p>
+    <p class="footer-company"><span class="footer-company-en">Managed by</span>幸せをカタチにする株式会社</p>
+  </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+// ===== HEADER SCROLL STATE (transparent over hero → white after scroll) =====
+(function() {
+  const header = document.querySelector('header');
+  const threshold = 60;
+  function update() {
+    if (window.scrollY > threshold) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+})();
+
+// ===== TOPICS LIST EXPAND/COLLAPSE =====
+(function() {
+  const list = document.getElementById('newsList');
+  const btn = document.getElementById('newsToggle');
+  if (!list || !btn) return;
+  const txt = btn.querySelector('.news-toggle-text');
+  const chev = btn.querySelector('.chev');
+  btn.addEventListener('click', function() {
+    const expanded = list.classList.toggle('expanded');
+    btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    if (txt) txt.textContent = expanded ? 'CLOSE' : 'TOPICS LIST';
+    if (chev) chev.style.transform = expanded ? 'rotate(90deg)' : 'rotate(0deg)';
+  });
+})();
+
+// ===== GALLERY: auto-scroll + manual drag/scroll with seamless infinite loop =====
+(function() {
+  const viewport = document.getElementById('galleryViewport');
+  const track = document.getElementById('galleryTrack');
+  if (!viewport || !track) return;
+
+  // オリジナル＋クローンの2周構造のうち「オリジナル1周の幅」をハーフ幅として算出
+  let halfWidth = 0;
+  function measure() {
+    // track全体（オリジナル6件＋クローン6件）の半分がループ周期
+    halfWidth = track.scrollWidth / 2;
+  }
+  // 画像読み込みが終わってから正確に計測
+  window.addEventListener('load', measure);
+  window.addEventListener('resize', measure);
+  measure();
+
+  // scrollLeftが片方の端を超えたら、視覚的に同じ位置にワープさせて無限ループ
+  function wrap() {
+    if (halfWidth <= 0) return;
+    if (viewport.scrollLeft >= halfWidth) {
+      viewport.scrollLeft -= halfWidth;
+    } else if (viewport.scrollLeft < 0) {
+      viewport.scrollLeft += halfWidth;
+    }
+  }
+  viewport.addEventListener('scroll', wrap, { passive: true });
+
+  // 自動スクロール（1フレームあたりの進行px）
+  const SPEED = 0.6; // 値を大きくすると速い
+  let paused = false;
+  let resumeTimer = null;
+  let last = performance.now();
+  function tick(now) {
+    const dt = now - last; last = now;
+    if (!paused && halfWidth > 0) {
+      // 60fps基準で正規化
+      viewport.scrollLeft += SPEED * (dt / (1000 / 60));
+      wrap();
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  function pauseAuto(ms = 1800) {
+    paused = true;
+    if (resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => { paused = false; }, ms);
+  }
+
+  // ホバーで一時停止（PC）
+  viewport.addEventListener('mouseenter', () => { paused = true; });
+  viewport.addEventListener('mouseleave', () => { paused = false; });
+
+  // ユーザー操作（ホイール/タッチ/ドラッグ）を検知したら自動停止→少し経って再開
+  viewport.addEventListener('wheel', () => pauseAuto(), { passive: true });
+  viewport.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+  viewport.addEventListener('touchend', () => pauseAuto(1600), { passive: true });
+
+  // マウスドラッグでの横スクロール
+  let isDown = false, startX = 0, startScroll = 0;
+  viewport.addEventListener('mousedown', (e) => {
+    isDown = true;
+    paused = true;
+    startX = e.pageX;
+    startScroll = viewport.scrollLeft;
+    viewport.style.cursor = 'grabbing';
+  });
+  window.addEventListener('mouseup', () => {
+    if (!isDown) return;
+    isDown = false;
+    viewport.style.cursor = '';
+    pauseAuto(1600);
+  });
+  window.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    viewport.scrollLeft = startScroll - (e.pageX - startX);
+  });
+
+  // 画像内ドラッグのゴースト画像を無効化（ドラッグ体験向上）
+  track.querySelectorAll('img').forEach(img => {
+    img.addEventListener('dragstart', e => e.preventDefault());
+  });
+})();
+
+// ===== FAQ LIST EXPAND/COLLAPSE =====
+(function() {
+  const list = document.getElementById('faqList');
+  const btn = document.getElementById('faqToggle');
+  if (!list || !btn) return;
+  const txt = btn.querySelector('.faq-toggle-text');
+  const chev = btn.querySelector('.chev');
+  btn.addEventListener('click', function() {
+    const expanded = list.classList.toggle('expanded');
+    btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    if (txt) txt.textContent = expanded ? 'CLOSE' : 'FAQ LIST';
+    if (chev) chev.style.transform = expanded ? 'rotate(90deg)' : 'rotate(0deg)';
+  });
+})();
+
+// ===== NEWS MODAL =====
+(function() {
+  const modal = document.getElementById('newsModal');
+  if (!modal) return;
+  const dateEl = modal.querySelector('.news-modal-date');
+  const tagEl = modal.querySelector('.news-modal-tag');
+  const titleEl = modal.querySelector('.news-modal-title');
+  const bodyEl = modal.querySelector('.news-modal-body');
+  const body = document.body;
+
+  function open(item) {
+    dateEl.textContent = item.querySelector('.news-date')?.textContent || '';
+    tagEl.textContent = item.querySelector('.news-tag')?.textContent || '';
+    titleEl.textContent = item.querySelector('.news-title-text')?.textContent || '';
+    const bodyContent = item.querySelector('.news-body');
+    bodyEl.innerHTML = bodyContent ? bodyContent.innerHTML : '<p>詳細は準備中です。</p>';
+    modal.classList.add('open');
+    body.classList.add('menu-open'); // 背景スクロール防止
+  }
+  function close() {
+    modal.classList.remove('open');
+    body.classList.remove('menu-open');
+  }
+  document.querySelectorAll('.news-item').forEach(item => {
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      open(item);
+    });
+  });
+  modal.querySelectorAll('[data-close]').forEach(el => {
+    el.addEventListener('click', close);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) close();
+  });
+})();
+
+// ===== HAMBURGER MENU (full-screen) =====
+(function() {
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.querySelector('nav');
+  const body = document.body;
+  if (!hamburger || !nav) return;
+
+  function toggle() {
+    const open = nav.classList.toggle('open');
+    hamburger.classList.toggle('active', open);
+    body.classList.toggle('menu-open', open);
+  }
+  function close() {
+    nav.classList.remove('open');
+    hamburger.classList.remove('active');
+    body.classList.remove('menu-open');
+  }
+  hamburger.addEventListener('click', toggle);
+  // メニュー項目タップで自動クローズ
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', close);
+  });
+  // ESCキーでクローズ
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') close();
+  });
+})();
+
+// ===== HERO SLIDER =====
+(function() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const indicators = document.querySelectorAll('.hero-indicator');
+  let current = 0;
+  const duration = 5000;
+  let timer;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    indicators[current].classList.remove('active');
+    current = index % slides.length;
+    slides[current].classList.add('active');
+    indicators[current].classList.add('active');
+
+    // Restart indicator animation
+    const ind = indicators[current];
+    ind.style.animation = 'none';
+    ind.offsetHeight;
+    ind.style.animation = '';
+  }
+
+  function next() { goTo(current + 1); }
+  function start() { timer = setInterval(next, duration); }
+  function stop() { clearInterval(timer); }
+
+  indicators.forEach((ind, i) => {
+    ind.addEventListener('click', () => { stop(); goTo(i); start(); });
+  });
+
+  start();
+})();
+
+// Fade-in animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ===== PLAN SIMULATOR =====
+const simState = { step: 1, answers: {} };
+
+const staffData = {
+  supporter: { role: 'ウェルネスサポーター', name: '（未定）', price: 4950, icon: '🏋️' },
+  coach:     { role: 'ウェルネスコーチ', name: 'りさ', price: 6050, icon: '🧘' },
+  coordinator: { role: 'ウェルネスコーディネーター', name: 'ゆうじ', price: 7150, icon: '🧑‍⚕️' }
+};
+
+const memberFees = { standard: 6600, premium: 11000 };
+
+function simSelect(step, val) {
+  simState.answers[step] = val;
+  if (step < 3) {
+    showPanel(step + 1);
+  } else {
+    showResult();
+  }
+}
+
+function showPanel(n) {
+  simState.step = n;
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById('simPanel' + i).style.display = i === n ? 'block' : 'none';
+  }
+  document.getElementById('simResult').style.display = 'none';
+  document.getElementById('simBackWrap').style.display = n > 1 ? 'block' : 'none';
+
+  // Update progress
+  const pct = ((n - 1) / 3) * 100;
+  document.getElementById('simProgressBar').style.width = pct + '%';
+  ['simStep1','simStep2','simStep3','simStepR'].forEach((id, idx) => {
+    const el = document.getElementById(id);
+    el.classList.remove('active','done');
+    if (idx < n - 1) el.classList.add('done');
+    else if (idx === n - 1) el.classList.add('active');
+  });
+}
+
+function showResult() {
+  simState.step = 4;
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById('simPanel' + i).style.display = 'none';
+  }
+  document.getElementById('simBackWrap').style.display = 'none';
+  document.getElementById('simResult').style.display = 'block';
+  document.getElementById('simProgressBar').style.width = '100%';
+  ['simStep1','simStep2','simStep3'].forEach(id => {
+    document.getElementById(id).classList.remove('active');
+    document.getElementById(id).classList.add('done');
+  });
+  document.getElementById('simStepR').classList.add('active');
+
+  // Determine plan
+  const booking = simState.answers[1];
+  const need = simState.answers[2];
+  const times = simState.answers[3];
+
+  // Plan logic
+  let plan = 'standard';
+  let planReason = 'ご自身のペースで予約できるスタンダードプラン';
+  if (booking === 'early' || booking === 'fixed') {
+    plan = 'premium';
+    planReason = booking === 'fixed'
+      ? '曜日と時間を固定できるプレミアムプラン'
+      : '60日前から予約できるプレミアムプラン';
+  }
+
+  // Staff logic
+  let staffKey = 'coach';
+  let staffReason = 'トレーニングを中心にサポート';
+  if (need === 'pain') {
+    staffKey = 'coordinator';
+    staffReason = 'カラダの痛み・不調の分析と改善に対応';
+  } else if (need === 'holistic') {
+    staffKey = 'coordinator';
+    staffReason = 'コンディショニング＋トレーニングを総合的に';
+  } else if (need === 'training') {
+    staffKey = 'coach';
+    staffReason = 'トレーニング・ボディメイクをしっかりサポート';
+  }
+
+  const staff = staffData[staffKey];
+  const mFee = memberFees[plan];
+  const sFee = staff.price * times;
+  const total = mFee + sFee;
+
+  // Update DOM
+  const badge = document.getElementById('resPlanBadge');
+  badge.textContent = plan === 'premium' ? 'プレミアム' : 'スタンダード';
+  badge.className = 'sim-result-plan-badge' + (plan === 'premium' ? ' premium' : '');
+  document.getElementById('resPlanReason').textContent = planReason;
+
+  document.getElementById('resStaffRole').textContent = staff.role;
+  document.getElementById('resStaffName').textContent = staff.name;
+  document.getElementById('resStaffReason').textContent = staffReason;
+  document.querySelector('.sim-result-staff-icon').textContent = staff.icon;
+
+  document.getElementById('resMemberFee').textContent = '¥' + mFee.toLocaleString();
+  document.getElementById('resUnit').textContent = '¥' + staff.price.toLocaleString();
+  document.getElementById('resTimes').textContent = times;
+  document.getElementById('resSessionFee').textContent = '¥' + sFee.toLocaleString();
+  document.getElementById('resTotal').textContent = '¥' + total.toLocaleString();
+}
+
+function simBack() {
+  if (simState.step > 1) {
+    showPanel(simState.step - 1);
+  }
+}
+
+function simReset() {
+  simState.step = 1;
+  simState.answers = {};
+  showPanel(1);
+}
+</script>
+
+</body>
+</html>
